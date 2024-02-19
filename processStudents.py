@@ -32,52 +32,49 @@ import csv
 
 
 # create a file object to open the file in read mode
-infile = open('students.csv','r',newline="")
 
-
+in1 = "这一句话是放进去之前修改的"
 
 # create a csv object from the file object
-reader = csv.reader(infile)
+in2 = "这一句话是复制进来之后修改的"
+
 #skip the header row
-next(reader)
+
 
 #create an outfile object for the pocessed record
-outfile = open('processedStudents.csv','a',newline="")
-writer = csv.writer(outfile)
+
+
 
 #create a new dictionary named 'student_dict'
-student_dict = {}
+
 
 
 #use a loop to iterate through each row of the file
 
-for row in reader:
-    #check if the GPA is below 3.0. If so, write the record to the outfile
-    gpa = float(row[8])
-    if gpa<3.0:
-        writer.writerow([row[0],row[2],row[3],row[6],row[7],row[8]])
 
+    #check if the GPA is below 3.0. If so, write the record to the outfile
+    
         
+
+
+
     # append the record to the dictionary with the student Full name in proper case 
     # as the Key and the value as the GPA
-    full_name = row[2].capitalize()+' '+row[3].capitalize()
-    student_dict[full_name] = gpa
+    
 
 
 
 
 
 #print the entire dictionary
-print(student_dict)
-333333333333333
+
 
 #Print the corresponding GPA for student 'Luke Brazzi'
-print(student_dict['Luke Brazzi'])
+
 
 
 #close the outfile
-outfile.close()
-infile.close()
+
 
 
 
